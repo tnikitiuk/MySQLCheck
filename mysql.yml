@@ -1,0 +1,9 @@
+---
+  - hosts: webserver
+    tasks:
+            - name: Start MySQL
+              ansible.builtin.service:
+                name: mysql
+                state: started
+            - name: MySQL Check
+              command: mysqlcheck --all-databases
